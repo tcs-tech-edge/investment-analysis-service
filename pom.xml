@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.techedge.spring</groupId>
-	<artifactId>user-management-service</artifactId>
+	<artifactId>investment-analysis-service</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 	<name>investment-analysis-service</name>
