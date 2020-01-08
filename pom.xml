@@ -12,8 +12,8 @@
 	<artifactId>user-management-service</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
-	<name>user-management-service</name>
-	<description>Spring boot Application for Managing user</description>
+	<name>investment-analysis-service</name>
+	<description>Spring boot Application for analysing investment</description>
 
 	<properties>
 		<java.version>1.8</java.version>
