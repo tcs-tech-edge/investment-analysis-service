@@ -35,5 +35,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers()
                 .frameOptions()
                 .disable();
+        http.cors();
     }
 }

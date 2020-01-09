@@ -15,8 +15,8 @@ public class MarketPriceController {
     MarketDataService marketService;
 
     @CrossOrigin
-    @GetMapping("/market/getQuote")
-    public ResponseEntity<String> getQuote(@PathVariable("symbol") String symbol) throws  Exception{
+    @GetMapping("/market/getQuote/{symbol}")
+    public ResponseEntity<String> getQuote(@PathVariable String symbol) throws  Exception{
         return ResponseEntity.ok()
                 .body(marketService.getStockPrice(symbol));
     }

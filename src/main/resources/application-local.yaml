@@ -1,0 +1,20 @@
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: password
+#  jpa:
+#   dabase-platform: org.hibernate.dialect.H2Dialect
+database:
+  driver: org.h2.Driver
+  platform: org.hibernate.dialect.H2Dialect
+  url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+  username:
+  password:
+logging.level.com.techedge.spring.ums: DEBUG
+database.generate.ddl: true
+database.show.sql: true
+market:
+  endpoint:
+    quoteEndpoint : https://www.alphavantage.co/query?function=GLOBAL_QUOTE&apikey=NYK6AAP8B7B2KITM
