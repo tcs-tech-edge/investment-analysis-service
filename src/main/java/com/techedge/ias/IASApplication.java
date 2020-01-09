@@ -13,7 +13,7 @@ public class IASApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(IASApplication.class, args);
-        System.getenv().forEach((key, value) -> LOGGER.debug("{} -> {}", key, value));
+       // System.getenv().forEach((key, value) -> LOGGER.debug("{} -> {}", key, value));
     }
 
 }
