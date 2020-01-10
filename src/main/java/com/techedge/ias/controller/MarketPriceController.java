@@ -1,7 +1,6 @@
 package com.techedge.ias.controller;
 
 import com.techedge.ias.service.MarketDataService;
-import com.techedge.ias.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

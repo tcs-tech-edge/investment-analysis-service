@@ -15,15 +15,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
 @EnableDynamoDBRepositories(basePackageClasses = UserRepository.class)
 public class DynamoDBConfig {
 
-    @Value("${amazon.aws.accesskey}")
+    @Value("${amazon.aws.accesskey:access}")
     private String amazonAWSAccessKey;
 
-    @Value("${amazon.aws.secretkey}")
+    @Value("${amazon.aws.secretkey:secret}")
     private String amazonAWSSecretKey;
 
     public AWSCredentialsProvider amazonAWSCredentialsProvider() {
@@ -48,6 +49,7 @@ public class DynamoDBConfig {
     }
 
     @Bean
+    @Profile("prod")
     public AmazonDynamoDB amazonDynamoDB() {
         return AmazonDynamoDBClientBuilder.standard().withCredentials(amazonAWSCredentialsProvider())
                 .withRegion(Regions.US_EAST_1).build();
