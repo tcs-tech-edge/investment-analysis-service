@@ -1,8 +1,8 @@
 package com.techedge.ias.service.impl;
 
-import com.techedge.ias.data.entity.User;
-import com.techedge.ias.data.repository.UserRepository;
-import com.techedge.ias.model.UserDetail;
+import com.techedge.ias.data.entity.InvestmentPortfolio;
+import com.techedge.ias.data.repository.InvestmentPortfolioRepository;
+import com.techedge.ias.model.InvestmentPortfolioDetail;
 import com.techedge.ias.service.UserService;
 import com.techedge.ias.test.config.TestConfig;
 import org.junit.Before;
@@ -24,27 +24,27 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = TestConfig.class)
-public class UserServiceImplTest {
+public class InvestmentPortfolioServiceImplTest {
 
     @Autowired
     private UserService userService;
 
     @MockBean
-    private UserRepository userRepository;
+    private InvestmentPortfolioRepository investmentPortfolioRepository;
 
     @Before
     public void setUserRepository() {
-        User user = new User("Murugesh", "Kumar");
-        when(userRepository.findAll()).thenReturn(Collections.singletonList(user));
+        InvestmentPortfolio investmentPortfolio = new InvestmentPortfolio("Murugesh", "Kumar");
+        when(investmentPortfolioRepository.findAll()).thenReturn(Collections.singletonList(investmentPortfolio));
     }
 
     @Test
     public void whenUserFoundThenShouldReturn() {
-        List<UserDetail> users = userService.getAllUsers();
+        List<InvestmentPortfolioDetail> users = userService.getAllInvestments();
         assertNotNull(users);
         assertEquals(1, users.size());
-        assertEquals("Murugesh", users.get(0).getFirstName());
-        assertEquals("Kumar", users.get(0).getLastName());
+        assertEquals("Murugesh", users.get(0).getCustomerID());
+        assertEquals("Kumar", users.get(0).getAccountID());
 
     }
 }

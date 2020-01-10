@@ -84,19 +84,19 @@ links to navigate from resource to resource.
 
 The Users resource is used to create and list user.
 
-[[resources-user-add]]
+[[resources-investment-add]]
 === Add User
 
 A `POST` request will add user.
 
-operation::user-add-example[snippets='curl-request,http-request,request-fields,http-response,response-fields']
+operation::investment-add-example[snippets='curl-request,http-request,request-fields,http-response,response-fields']
 
 
-[[resources-user-list]]
+[[resources-investment-list]]
 === Listing Users
 
 A `GET` request will list all of the users.
 
-operation::user-list-example[snippets='curl-request,http-response,response-fields']
+operation::investment-list-example[snippets='curl-request,http-response,response-fields']
 
 

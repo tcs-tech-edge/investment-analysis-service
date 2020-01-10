@@ -1,8 +1,8 @@
 package com.techedge.ias.controller;
 
 import com.techedge.ias.IASApplication;
-import com.techedge.ias.data.entity.User;
-import com.techedge.ias.data.repository.UserRepository;
+import com.techedge.ias.data.entity.InvestmentPortfolio;
+import com.techedge.ias.data.repository.InvestmentPortfolioRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,12 +31,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @TestPropertySource(
         locations = "classpath:application.properties")
 @ActiveProfiles("local")
-public class UserControllerIntegrationTest {
+public class InvestmentPortfolioControllerIntegrationTest {
 
     private MockMvc mvc;
 
     @Autowired
-    private UserRepository repository;
+    private InvestmentPortfolioRepository repository;
 
     @Autowired
     WebApplicationContext webApplicationContext;
@@ -53,15 +53,15 @@ public class UserControllerIntegrationTest {
     @Test
     public void givenUsersPresent_thenReturnAllUsers() throws Exception {
 
-        User user = new User("Murugesh", "Kumar");
-        repository.save(user);
+        InvestmentPortfolio investmentPortfolio = new InvestmentPortfolio("Murugesh", "Kumar");
+        repository.save(investmentPortfolio);
 
-        mvc.perform(get("/user/list"))
+        mvc.perform(get("/investment/list"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-               .andExpect(jsonPath("$[0].firstName", is("Murugesh")))
-                .andExpect(jsonPath("$[0].lastName", is("Kumar")));
+               .andExpect(jsonPath("$[0].customerID", is("Murugesh")))
+                .andExpect(jsonPath("$[0].accountID", is("Kumar")));
 
     }
 }

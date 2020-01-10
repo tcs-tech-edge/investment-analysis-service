@@ -1,6 +1,6 @@
 package com.techedge.ias.test.config;
 
-import com.techedge.ias.mapper.UserMapper;
+import com.techedge.ias.mapper.InvestmentPortfolioMapper;
 import com.techedge.ias.service.UserService;
 import com.techedge.ias.service.impl.UserServiceImpl;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -15,7 +15,7 @@ public class TestConfig {
     }
 
     @Bean
-    public UserMapper userMapper() {
-        return new UserMapper();
+    public InvestmentPortfolioMapper userMapper() {
+        return new InvestmentPortfolioMapper();
     }
 }

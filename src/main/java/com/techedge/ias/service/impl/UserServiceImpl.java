@@ -1,9 +1,9 @@
 package com.techedge.ias.service.impl;
 
-import com.techedge.ias.data.entity.User;
-import com.techedge.ias.data.repository.UserRepository;
-import com.techedge.ias.mapper.UserMapper;
-import com.techedge.ias.model.UserDetail;
+import com.techedge.ias.data.entity.InvestmentPortfolio;
+import com.techedge.ias.data.repository.InvestmentPortfolioRepository;
+import com.techedge.ias.mapper.InvestmentPortfolioMapper;
+import com.techedge.ias.model.InvestmentPortfolioDetail;
 import com.techedge.ias.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,22 +15,22 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    private InvestmentPortfolioRepository investmentPortfolioRepository;
 
     @Autowired
-    UserMapper userMapper;
+    InvestmentPortfolioMapper investmentPortfolioMapper;
 
     @Override
-    public UserDetail addUser(UserDetail userDetail) {
-        User user = userMapper.map(userDetail);
-        userRepository.save(user);
-        return userDetail;
+    public InvestmentPortfolioDetail addInvestment(InvestmentPortfolioDetail investmentPortfolioDetail) {
+        InvestmentPortfolio investmentPortfolio = investmentPortfolioMapper.map(investmentPortfolioDetail);
+        investmentPortfolioRepository.save(investmentPortfolio);
+        return investmentPortfolioDetail;
     }
 
     @Override
-    public List<UserDetail> getAllUsers() {
-        List<UserDetail> userDetails = new ArrayList<>();
-        userRepository.findAll().forEach(user -> userDetails.add(userMapper.map(user)));
-        return userDetails;
+    public List<InvestmentPortfolioDetail> getAllInvestments() {
+        List<InvestmentPortfolioDetail> investmentPortfolioDetails = new ArrayList<>();
+        investmentPortfolioRepository.findAll().forEach(user -> investmentPortfolioDetails.add(investmentPortfolioMapper.map(user)));
+        return investmentPortfolioDetails;
     }
 }

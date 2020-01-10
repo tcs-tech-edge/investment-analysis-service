@@ -1,12 +1,12 @@
 package com.techedge.ias.service;
 
-import com.techedge.ias.model.UserDetail;
+import com.techedge.ias.model.InvestmentPortfolioDetail;
 
 import java.util.List;
 
 public interface UserService {
 
-    UserDetail addUser(UserDetail userDetail);
+    InvestmentPortfolioDetail addInvestment(InvestmentPortfolioDetail investmentPortfolioDetail);
 
-    List<UserDetail> getAllUsers();
+    List<InvestmentPortfolioDetail> getAllInvestments();
 }

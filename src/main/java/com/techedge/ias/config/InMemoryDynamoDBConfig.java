@@ -57,7 +57,7 @@ public class InMemoryDynamoDBConfig {
     }
 
     private void initializeDatabase() {
-        createTable("User","id", ScalarAttributeType.S, 5L, 5L);
+        createTable("InvestmentPortfolio","transactionID", ScalarAttributeType.S, 5L, 5L);
     }
 
     private void createTable(String tableName, String partitionIdName, ScalarAttributeType partitionIdType, long rcu, long wcu) {
