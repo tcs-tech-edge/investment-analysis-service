@@ -10,8 +10,6 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-import javax.json.Json;
-
 @Service
 public class MarketDataServiceImpl implements MarketDataService {
     Logger logger = LoggerFactory.getLogger(MarketDataServiceImpl.class);
